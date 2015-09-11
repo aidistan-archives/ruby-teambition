@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Aidi Stan']
   spec.email         = ['aidistan@live.com']
   spec.summary       = 'Ruby wrapper of Teambition API'
-  spec.description   = 'Ruby wrapper of Teambition API, shipped with Rails support.'
+  spec.description   = 'A simple Ruby wrapper of Teambition API, shipped with Rails support.'
   spec.homepage      = 'https://github.com/aidistan/ruby-teambition'
   spec.license       = 'MIT'
 
