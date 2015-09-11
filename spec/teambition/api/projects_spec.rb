@@ -23,6 +23,9 @@ describe Teambition::API do
     expect(res).to be_an_instance_of(Hash)
     expect(res['_creatorId']).to eql(@me['_id'])
 
+    # Why not have a rest?
+    sleep(0.5)
+
     res = delete '/api/projects/' + res['_id']
     expect(res).to be_an_instance_of(Hash)
     expect(res.empty?).to be_truthy
