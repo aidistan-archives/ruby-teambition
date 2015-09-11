@@ -1,12 +1,13 @@
 PATH
   remote: .
   specs:
-    teambition (0.0.0)
+    teambition (0.0.1)
 
 GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.2.5)
+    highline (1.7.3)
     rake (10.4.2)
     rspec (3.3.0)
       rspec-core (~> 3.3.0)
@@ -27,6 +28,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.7)
+  highline (~> 1.7.3)
   rake (~> 10.0)
   rspec (~> 3.3.0)
   teambition!
