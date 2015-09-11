@@ -15,7 +15,6 @@ namespace :spec do
   task :setup do
     require 'highline/import'
     require 'teambition'
-    include Teambition::API
 
     say "Let's get a redirect url first:"
     say "1. open 'http://request.lesschat.com/create'"
@@ -33,7 +32,7 @@ namespace :spec do
     say '---'
 
     say "Let's get a code at last:"
-    say "1. Open '#{authorize_url(Teambition.callback_url)}' and sign in with your account"
+    say "1. Open '#{Teambition.authorize_url}' and sign in with your account"
     say "2. Open '#{Teambition.callback_url}/inspect' and find your code there"
     code = ask '3. paste your code here:'
 
@@ -50,7 +49,7 @@ Teambition.client_key    = '#{Teambition.client_key}'
 Teambition.client_secret = '#{Teambition.client_secret}'
 Teambition.callback_url  = '#{Teambition.callback_url}'
 
-TEAMBITION_TOKEN = '#{get_access_token(code)}'
+TEAMBITION_TOKEN = '#{Teambition.get_access_token(code)}'
     END_OF_DOC
     file.close
 
