@@ -20,7 +20,7 @@ Teambition.client_key    = 'YOUR_CLIENT_KEY'
 Teambition.client_secret = 'YOUR_CLIENT_SECRET'
 
 # 配置用户
-@teambition_token = 'YOUR_TOKEN'
+@token = 'YOUR_TOKEN'
 # 关于如何获取 Token，请参考 Rakefile 中的 spec:setup 方法
 
 # 调用 API

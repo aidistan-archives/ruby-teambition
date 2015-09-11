@@ -1,10 +1,12 @@
 module Teambition
   module API
+    attr_accessor :token
+
     def valid_access_token?
       uri = URI.join(Teambition::API_DOMAIN, "/api/applications/#{Teambition.client_key}/tokens/check")
 
       req = Net::HTTP::Get.new(uri)
-      req['Authorization'] = "OAuth2 #{@teambition_token}"
+      req['Authorization'] = "OAuth2 #{token}"
 
       res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |https|
         https.request(req)
@@ -13,12 +15,12 @@ module Teambition
     end
 
     def get(path)
-      uri = URI.join(API_DOMAIN, path + "?access_token=#{@teambition_token}")
+      uri = URI.join(API_DOMAIN, path + "?access_token=#{token}")
       JSON.parse(Net::HTTP.get(uri))
     end
 
     def post(path, params = {})
-      uri = URI.join(API_DOMAIN, path + "?access_token=#{@teambition_token}")
+      uri = URI.join(API_DOMAIN, path + "?access_token=#{token}")
 
       req = Net::HTTP::Post.new(uri)
       req.set_form_data(params)
@@ -30,7 +32,7 @@ module Teambition
     end
 
     def put(path, params = {})
-      uri = URI.join(API_DOMAIN, path + "?access_token=#{@teambition_token}")
+      uri = URI.join(API_DOMAIN, path + "?access_token=#{token}")
 
       req = Net::HTTP::Put.new(uri)
       req.set_form_data(params)
@@ -42,7 +44,7 @@ module Teambition
     end
 
     def delete(path)
-      uri = URI.join(API_DOMAIN, path + "?access_token=#{@teambition_token}")
+      uri = URI.join(API_DOMAIN, path + "?access_token=#{token}")
 
       req = Net::HTTP::Delete.new(uri)
       res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |https|

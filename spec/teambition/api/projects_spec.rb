@@ -2,7 +2,7 @@ describe Teambition::API do
   include Teambition::API
 
   before(:example) do
-    @teambition_token = TEAMBITION_TOKEN
+    self.token = TEAMBITION_TOKEN
     @me = get '/api/users/me'
   end
 
