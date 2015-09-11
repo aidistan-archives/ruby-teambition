@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Teambition do
   it 'has DOMAINs' do
     expect(Teambition::AUTH_DOMAIN).to be_an_instance_of(String)
@@ -27,7 +25,7 @@ describe Teambition do
   end
 
   it 'checks access token' do
-    expect(Teambition.check_access_token TEAMBITION_TOKEN).to be_truthy
-    expect(Teambition.check_access_token 'an-invalid-token').to be_falsy
+    expect(Teambition.valid_access_token? TEAMBITION_TOKEN).to be_truthy
+    expect(Teambition.valid_access_token? 'an-invalid-token').to be_falsy
   end
 end

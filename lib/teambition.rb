@@ -38,7 +38,7 @@ module Teambition
       JSON.parse(res.body)['access_token']
     end
 
-    def check_access_token(token)
+    def valid_access_token?(token)
       uri = URI.join(API_DOMAIN, "/api/applications/#{client_key}/tokens/check")
 
       req = Net::HTTP::Get.new(uri)
