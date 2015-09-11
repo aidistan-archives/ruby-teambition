@@ -7,9 +7,9 @@ Teambition API 的 Ruby 版简易封装, 并支持作为 Rails 插件使用。
 
 为便于上手和使用，Gem 只封装了 OAuth2 部分，其他 API 可直接调用 `get`, `post`, `put` 和 `delete` 方法。具体示例如下：
 
-### 直接使用
+### 直接包含
 
-原理与 Rakefile 和 specs 中的 API 调用/测试类似。
+直接将 `Teambition::API` 包含在当前空间内使用。
 
 ```ruby
 require 'teambition'
@@ -20,8 +20,9 @@ Teambition.client_key    = 'YOUR_CLIENT_KEY'
 Teambition.client_secret = 'YOUR_CLIENT_SECRET'
 
 # 配置用户
+self.token = 'YOUR_TOKEN'
+# 或
 @token = 'YOUR_TOKEN'
-# 关于如何获取 Token，请参考 Rakefile 中的 spec:setup 方法
 
 # 调用 API
 me = get '/api/users/me'
@@ -29,10 +30,48 @@ puts me['_id']
 # => 53f6c****************
 ```
 
+项目内以下文件可供参考：
+- Rakefile
+- spec/teambition_spec.rb
+- spec/teambition/api_spec.rb
+- spec/teambition/api/\*.rb
+
+### 派生扩展
+
+通过宏风格函数 `has_teambition_account` 扩展子类以使用。
+
+```ruby
+require 'teambition'
+
+class User
+  include Teambition::HasTeambitionAccout
+end
+
+class TeambitionUser < User
+  attr_accessor :teambition_token
+  has_teambition_account namespace: :tb, token: :teambition_token
+end
+
+user = TeambitionUser.new
+user.teambition_token = 'HIS_TOKEN'
+user.tb.get 'api/users/me'
+```
+
+项目内以下文件可供参考：
+- spec/teambition/has_teambition_account_spec.rb
+
+### In Rails
+
+`include Teambition::API` 对于用户类 `User`
+
+```ruby
+
+```
 
 ## 参考资料
 
 - [Teambition 开发者中心](https://docs.teambition.com/wiki/)
+- [Request 调试工具](http://request.lesschat.com/)
 
 
 ## 许可协议

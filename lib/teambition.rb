@@ -3,6 +3,7 @@ require 'net/http'
 require 'uri'
 
 require 'teambition/api'
+require 'teambition/has_teambition_account'
 require 'teambition/version'
 
 module Teambition
