@@ -11,7 +11,7 @@ Teambition API 的 Ruby 版简易封装, 并支持作为 Rails 插件使用。
 gem install teambition
 ```
 
-通过 Gemfile 方式
+通过 Gemfile
 ```ruby
 gem 'teambition'
 ```
@@ -19,7 +19,7 @@ gem 'teambition'
 
 ## 使用方法
 
-为便于上手和使用，Gem 只封装了 OAuth2 部分，其他 API 可直接调用 `get`, `post`, `put` 和 `delete` 方法。具体示例如下：
+为便于上手和使用，Gem 只封装了 OAuth2 部分，其他 API 可直接调用封装好的 `get`, `post`, `put` 和 `delete` 方法。具体示例如下：
 
 ### 直接包含
 
@@ -96,6 +96,8 @@ class User < ActiveRecord::Base
 end
 ```
 
+> 可自定义 namespace 和 token
+
 ```ruby
 # db/migrate/**************_add_teambition_attributes_to_users
 class AddTeambitionAttributesToUser < ActiveRecord::Migration
@@ -108,7 +110,11 @@ class AddTeambitionAttributesToUser < ActiveRecord::Migration
 end
 ```
 
+> 定义 teambition_id 字段以方便用户间交互
+
 #### 使用
+
+OAuth2 用法示例
 
 ```ruby
 # app/controllers/users_controller.rb
@@ -117,7 +123,7 @@ class UsersController < ApplicationController
 
   def oauth
     if @user.teambition_token && Teambition.valid_access_token?(@user.teambition_token)
-      flash[:success] = '已经绑定成功！'
+      flash[:success] = '已经绑定！'
       redirect_to root_path
     else
       redirect_to Teambition.authorize_url
@@ -135,13 +141,11 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
-  private
-
   #...
 end
 ```
 
-> routes.rb 配置略，注意配置好 Teambition 应用的回调地址。
+> 注意配置好回调地址
 
 
 ## 参考资料
