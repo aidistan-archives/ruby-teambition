@@ -32,8 +32,8 @@ namespace :spec do
     say '---'
 
     say "Let's get a code at last:"
-    say "1. Open '#{Teambition.authorize_url}' and sign in with your account"
-    say "2. Open '#{Teambition.callback_url}/inspect' and find your code there"
+    say "1. open '#{Teambition.authorize_url}' and sign in with your account"
+    say "2. open '#{Teambition.callback_url}/inspect' and find your code there"
     code = ask '3. paste your code here:'
 
     file = File.open('spec/spec_helper.rb', 'w')
