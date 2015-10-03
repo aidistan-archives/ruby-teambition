@@ -1,6 +1,7 @@
 require 'active_support'
 
 module Teambition
+  # Model-based mix-in module, built on ActiveSupport::Concern
   module HasTeambitionAccout
     extend ActiveSupport::Concern
 

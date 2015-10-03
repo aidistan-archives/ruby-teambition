@@ -6,15 +6,19 @@ require 'teambition/api'
 require 'teambition/has_teambition_account'
 require 'teambition/version'
 
+# Top-level namespace
 module Teambition
-  AUTH_DOMAIN  = 'https://account.teambition.com'
-  API_DOMAIN   = 'https://api.teambition.com'
+  # Authorization domain
+  AUTH_DOMAIN = 'https://account.teambition.com'
+  # API domain
+  API_DOMAIN = 'https://api.teambition.com'
 
   class << self
     attr_accessor :client_key
     attr_accessor :client_secret
     attr_accessor :callback_url
 
+    # Get the url for authorization
     def authorize_url(state: nil, lang: :zh)
       uri = URI.join(AUTH_DOMAIN, '/oauth2/authorize')
 
@@ -29,6 +33,7 @@ module Teambition
       uri.to_s
     end
 
+    # Fetch the access token by a code
     def get_access_token(code)
       res = Net::HTTP.post_form(
         URI.join(AUTH_DOMAIN, '/oauth2/access_token'),
@@ -39,6 +44,7 @@ module Teambition
       JSON.parse(res.body)['access_token']
     end
 
+    # Validate the token
     def valid_access_token?(token)
       uri = URI.join(API_DOMAIN, "/api/applications/#{client_key}/tokens/check")
 
