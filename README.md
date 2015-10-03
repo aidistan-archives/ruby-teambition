@@ -32,6 +32,7 @@ include Teambition::API
 # 配置应用
 Teambition.client_key    = 'YOUR_CLIENT_KEY'
 Teambition.client_secret = 'YOUR_CLIENT_SECRET'
+Teambition.callback_url  = 'YOUR_CALLBACK_URL'
 
 # 配置用户
 self.token = 'YOUR_TOKEN'
@@ -59,6 +60,7 @@ require 'teambition'
 
 Teambition.client_key    = 'YOUR_CLIENT_KEY'
 Teambition.client_secret = 'YOUR_CLIENT_SECRET'
+Teambition.callback_url  = 'YOUR_CALLBACK_URL'
 
 class User
   include Teambition::HasTeambitionAccout
@@ -87,6 +89,7 @@ require 'teambition/rails/has_teambition_account'
 
 Teambition.client_key    = 'YOUR_CLIENT_KEY'
 Teambition.client_secret = 'YOUR_CLIENT_SECRET'
+Teambition.callback_url  = 'YOUR_CALLBACK_URL'
 ```
 
 ```ruby
