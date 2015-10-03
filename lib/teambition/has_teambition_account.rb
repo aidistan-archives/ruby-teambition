@@ -13,7 +13,7 @@ module Teambition
 
         unless namespace
           include Teambition::API
-          define_method(:token) { self.send(token) } unless token == :token
+          define_method(:token) { send(token) } unless token == :token
           return
         end
 
@@ -31,7 +31,7 @@ module Teambition
         end
 
         define_method(namespace) do
-          @tb || kclass.new(self, token)
+          @__teambition_namespace__ ||= kclass.new(self, token)
         end
       end
     end
