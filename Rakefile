@@ -26,8 +26,8 @@ namespace :spec do
     say "Let's get a client key and a client secret now:"
     say "1. open 'https://account.teambition.com/my/apps'"
     say "2. create a new app and fill 'Callback URL' with the redirect url we got"
-    Teambition.client_key = ask "3. paste your client key here:"
-    Teambition.client_secret = ask "4. paste your client secret here:"
+    Teambition.client_key = ask '3. paste your client key here:'
+    Teambition.client_secret = ask '4. paste your client secret here:'
 
     say '---'
 
