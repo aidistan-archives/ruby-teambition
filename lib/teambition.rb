@@ -23,7 +23,7 @@ module Teambition
         redirect_uri: callback_url,
         lang: %w(zh en).include?(lang.to_s) ? lang : :zh
       }
-      params[:state] = params if state
+      params[:state] = state if state
       uri.query = URI.encode_www_form(params)
 
       uri.to_s
