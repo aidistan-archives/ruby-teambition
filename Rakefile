@@ -36,6 +36,16 @@ namespace :spec do
     say "2. open '#{Teambition.callback_url}/inspect' and find your code there"
     code = ask '3. paste your code here:'
 
+    say '---'
+
+    token = Teambition.get_access_token(code)
+    say 'Your token is:'
+    say token
+
+    say '---'
+
+    say 'Done. Enjoy testing with RSpec!'
+
     file = File.open('spec/spec_helper.rb', 'w')
     file.puts <<-END_OF_DOC
 require 'bundler/setup'
@@ -49,11 +59,8 @@ Teambition.client_key    = '#{Teambition.client_key}'
 Teambition.client_secret = '#{Teambition.client_secret}'
 Teambition.callback_url  = '#{Teambition.callback_url}'
 
-TEAMBITION_TOKEN = '#{Teambition.get_access_token(code)}'
+TEAMBITION_TOKEN = '#{token}'
     END_OF_DOC
     file.close
-
-    say '---'
-    say 'Done. Enjoy testing with RSpec!'
   end
 end
