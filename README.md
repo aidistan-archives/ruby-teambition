@@ -1,7 +1,7 @@
 # Ruby Gem : teambition
 [![Gem Version](https://badge.fury.io/rb/teambition.svg)](http://badge.fury.io/rb/teambition)
 
-Teambition API 的 Ruby 版简易封装, 并支持作为 Rails 插件使用。
+Teambition API 的 Ruby Gem 封装, 支持作为 Rails 插件使用。
 
 
 ## 安装方法
