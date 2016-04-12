@@ -8,6 +8,7 @@ RSpec::Core::RakeTask.new do
     exit
   end
 end
+task default: :spec
 
 # spec:setup
 namespace :spec do
