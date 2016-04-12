@@ -14,11 +14,16 @@ module Teambition
   API_DOMAIN = 'https://api.teambition.com'
 
   class << self
+    # Client key provided by Teambition
     attr_accessor :client_key
+    # Client secret provided by Teambition
     attr_accessor :client_secret
+    # Customizable callback url
     attr_accessor :callback_url
 
     # Get the url for authorization
+    # @param state [String]
+    # @param lang [String/Symbol]
     def authorize_url(state: nil, lang: :zh)
       uri = URI.join(AUTH_DOMAIN, '/oauth2/authorize')
 
@@ -34,6 +39,8 @@ module Teambition
     end
 
     # Fetch the access token by a code
+    # @param code [String]
+    # @return [String]
     def get_access_token(code)
       res = Net::HTTP.post_form(
         URI.join(AUTH_DOMAIN, '/oauth2/access_token'),
@@ -45,6 +52,8 @@ module Teambition
     end
 
     # Validate the token
+    # @param token [String]
+    # @return [Boolean]
     def valid_access_token?(token)
       uri = URI.join(API_DOMAIN, "/api/applications/#{client_key}/tokens/check")
 

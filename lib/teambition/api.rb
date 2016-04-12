@@ -1,6 +1,7 @@
 module Teambition
   # Mix-in module to introduce Teambition APIs
   module API
+    # Teambition user's token
     attr_accessor :token
 
     # Validate the token
@@ -16,12 +17,17 @@ module Teambition
       res.code == '200'
     end
 
+    # GET
+    # @param path [String]
     # @raise JSON::ParserError
     def get(path)
       uri = URI.join(API_DOMAIN, path + "?access_token=#{token}")
       JSON.parse(Net::HTTP.get(uri))
     end
 
+    # POST
+    # @param path [String]
+    # @param params [Hash]
     # @raise JSON::ParserError
     def post(path, params = {})
       uri = URI.join(API_DOMAIN, path + "?access_token=#{token}")
@@ -35,6 +41,9 @@ module Teambition
       JSON.parse(res.body)
     end
 
+    # PUT
+    # @param path [String]
+    # @param params [Hash]
     # @raise JSON::ParserError
     def put(path, params = {})
       uri = URI.join(API_DOMAIN, path + "?access_token=#{token}")
@@ -48,6 +57,8 @@ module Teambition
       JSON.parse(res.body)
     end
 
+    # DELETE
+    # @param path [String]
     # @raise JSON::ParserError
     def delete(path)
       uri = URI.join(API_DOMAIN, path + "?access_token=#{token}")

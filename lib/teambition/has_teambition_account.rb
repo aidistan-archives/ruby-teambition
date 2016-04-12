@@ -10,7 +10,7 @@ module Teambition
 
     class_methods do
       def has_teambition_account(token: :token, namespace: :tb)
-        fail ArgumentError unless token
+        raise ArgumentError unless token
 
         unless namespace
           include Teambition::API
