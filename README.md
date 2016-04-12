@@ -1,5 +1,6 @@
 # Ruby Gem : teambition
 [![Gem Version](https://badge.fury.io/rb/teambition.svg)](http://badge.fury.io/rb/teambition)
+[![Docs Status](http://inch-ci.org/github/aidistan/ruby-teambition.svg?branch=master)](http://inch-ci.org/github/aidistan/ruby-teambition)
 
 Teambition API 的 Ruby Gem 封装, 支持作为 Rails 插件使用。
 
