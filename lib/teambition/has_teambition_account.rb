@@ -9,6 +9,8 @@ module Teambition
     end
 
     class_methods do
+      # rubocop:disable Style/PredicateName, Metrics/MethodLength
+
       def has_teambition_account(token: :token, namespace: :tb)
         raise ArgumentError unless token
 
@@ -35,6 +37,8 @@ module Teambition
           @__teambition_namespace__ ||= kclass.new(self, token)
         end
       end
+
+      # rubocop:enable Style/PredicateName, Metrics/MethodLength
     end
   end
 end

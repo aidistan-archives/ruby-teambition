@@ -14,7 +14,7 @@ describe Teambition::HasTeambitionAccout do
   context 'with nil token' do
     it 'fails' do
       expect do
-        obj = Class.new(@base) do
+        Class.new(@base) do
           has_teambition_account token: nil
         end.new
       end.to raise_error(ArgumentError)

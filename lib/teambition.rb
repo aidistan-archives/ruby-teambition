@@ -9,9 +9,9 @@ require 'teambition/version'
 # Top-level namespace
 module Teambition
   # Authorization domain
-  AUTH_DOMAIN = 'https://account.teambition.com'
+  AUTH_DOMAIN = 'https://account.teambition.com'.freeze
   # API domain
-  API_DOMAIN = 'https://api.teambition.com'
+  API_DOMAIN = 'https://api.teambition.com'.freeze
 
   class << self
     # Client key provided by Teambition

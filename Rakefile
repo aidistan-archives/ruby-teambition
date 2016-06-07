@@ -60,7 +60,7 @@ Teambition.client_key    = '#{Teambition.client_key}'
 Teambition.client_secret = '#{Teambition.client_secret}'
 Teambition.callback_url  = '#{Teambition.callback_url}'
 
-TEAMBITION_TOKEN = '#{token}'
+TEAMBITION_TOKEN = '#{token}'.freeze
     END_OF_DOC
     file.close
   end
