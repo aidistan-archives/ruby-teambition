@@ -32,4 +32,4 @@ Gem 实现了 OAuth2 的基本功能，API 的调用可通过封装好的 `get`�
 
 ## 许可协议
 
-Copyright (c) 2015 Aidi Stan under [the MIT License](https://github.com/aidistan/ruby-teambition/blob/master/LICENSE)
+Copyright (c) 2015-2016 Aidi Stan under [the MIT License](https://github.com/aidistan/ruby-teambition/blob/master/LICENSE)
