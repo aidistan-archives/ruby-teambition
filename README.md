@@ -28,7 +28,7 @@ Gem 实现了 OAuth2 的基本功能，API 的调用可通过封装好的 `get`�
 ## 参考资料
 
 - [Teambition 开发者中心](https://docs.teambition.com/wiki/)
-- [Request 调试工具](http://request.lesschat.com/)
+- [RequestBin 调试工具](http://requestb.in/)
 
 ## 许可协议
 
