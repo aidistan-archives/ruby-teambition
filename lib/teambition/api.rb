@@ -28,6 +28,7 @@ module Teambition
     # POST
     # @param path [String]
     # @param params [Hash]
+    # @return [Hash]
     # @raise JSON::ParserError
     def post(path, params = {})
       uri = URI.join(API_DOMAIN, path + "?access_token=#{token}")
@@ -44,6 +45,7 @@ module Teambition
     # PUT
     # @param path [String]
     # @param params [Hash]
+    # @return [Hash]
     # @raise JSON::ParserError
     def put(path, params = {})
       uri = URI.join(API_DOMAIN, path + "?access_token=#{token}")
@@ -59,6 +61,7 @@ module Teambition
 
     # DELETE
     # @param path [String]
+    # @return [Hash]
     # @raise JSON::ParserError
     def delete(path)
       uri = URI.join(API_DOMAIN, path + "?access_token=#{token}")

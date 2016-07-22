@@ -5,6 +5,11 @@ module Teambition
   module HasTeambitionAccout
     extend ActiveSupport::Concern
 
+    # @!method has_teambition_account(token: :token, namespace: :tb)
+    #   Macro for mixing-in Teambition API
+    #   @param token [Symbol] the attribute storing the token in current namespace
+    #   @param namespace [Symbol] a name of the namespace which to include Teambition APIs (+nil+ to include directly in current namespace)
+
     included do
     end
 

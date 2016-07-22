@@ -24,6 +24,7 @@ module Teambition
     # Get the url for authorization
     # @param state [String]
     # @param lang [String/Symbol]
+    # @return [String]
     def authorize_url(state: nil, lang: :zh)
       uri = URI.join(AUTH_DOMAIN, '/oauth2/authorize')
 
@@ -53,7 +54,6 @@ module Teambition
 
     # Validate the token
     # @param token [String]
-    # @return [Boolean]
     def valid_access_token?(token)
       uri = URI.join(API_DOMAIN, "/api/applications/#{client_key}/tokens/check")
 
