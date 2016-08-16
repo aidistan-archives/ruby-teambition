@@ -1,5 +1,6 @@
 # Ruby Gem : Teambition
 [![Gem Version](https://badge.fury.io/rb/teambition.svg)](http://badge.fury.io/rb/teambition)
+[![Dependency Status](https://gemnasium.com/badges/github.com/aidistan/ruby-teambition.svg)](https://gemnasium.com/github.com/aidistan/ruby-teambition)
 [![Build Status](https://travis-ci.org/aidistan/ruby-teambition.svg?branch=master)](https://travis-ci.org/aidistan/ruby-teambition)
 [![Docs Status](http://inch-ci.org/github/aidistan/ruby-teambition.svg?branch=master)](http://inch-ci.org/github/aidistan/ruby-teambition)
 
