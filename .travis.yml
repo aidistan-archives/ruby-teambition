@@ -1,6 +1,8 @@
 language: ruby
+
 rvm:
-  - 2.2.4
-  - 2.3.0
+  - 2.2.5
+  - 2.3.1
+
 before_install:
   - openssl aes-256-cbc -K $encrypted_ec138b4290e8_key -iv $encrypted_ec138b4290e8_iv -in .travis.enc -out spec/spec_helper.rb -d
