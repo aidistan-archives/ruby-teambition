@@ -1,6 +1,5 @@
 # Ruby Gem : Teambition
 [![Gem Version](https://badge.fury.io/rb/teambition.svg)](http://badge.fury.io/rb/teambition)
-[![Dependency Status](https://gemnasium.com/badges/github.com/aidistan/ruby-teambition.svg)](https://gemnasium.com/github.com/aidistan/ruby-teambition)
 [![Build Status](https://travis-ci.org/aidistan/ruby-teambition.svg?branch=master)](https://travis-ci.org/aidistan/ruby-teambition)
 [![Docs Status](http://inch-ci.org/github/aidistan/ruby-teambition.svg?branch=master)](http://inch-ci.org/github/aidistan/ruby-teambition)
 
@@ -33,4 +32,4 @@ Gem 实现了 OAuth2 的基本功能，API 的调用可通过封装好的 `get`�
 
 ## 许可协议
 
-Copyright (c) 2015-2016 Aidi Stan under [the MIT License](https://github.com/aidistan/ruby-teambition/blob/master/LICENSE)
+Copyright (c) 2015-2018 Aidi Stan under [the MIT License](https://github.com/aidistan/ruby-teambition/blob/master/LICENSE)
