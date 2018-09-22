@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    teambition (0.6.0)
+    teambition (0.7.0)
       activesupport (>= 4.2)
 
 GEM
