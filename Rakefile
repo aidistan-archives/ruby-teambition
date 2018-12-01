@@ -52,6 +52,8 @@ namespace :spec do
     file.puts <<~END_OF_DOC
       require 'bundler/setup'
       require 'teambition'
+      require 'simplecov'
+      SimpleCov.start
 
       #
       # Set by `rake spec:setup` automatically
