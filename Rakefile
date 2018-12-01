@@ -49,19 +49,19 @@ namespace :spec do
     say 'Done. Enjoy testing with RSpec!'
 
     file = File.open('spec/spec_helper.rb', 'w')
-    file.puts <<-END_OF_DOC
-require 'bundler/setup'
-require 'teambition'
+    file.puts <<~END_OF_DOC
+      require 'bundler/setup'
+      require 'teambition'
 
-#
-# Set by `rake spec:setup` automatically
-#
+      #
+      # Set by `rake spec:setup` automatically
+      #
 
-Teambition.client_key    = '#{Teambition.client_key}'
-Teambition.client_secret = '#{Teambition.client_secret}'
-Teambition.callback_url  = '#{Teambition.callback_url}'
+      Teambition.client_key    = '#{Teambition.client_key}'
+      Teambition.client_secret = '#{Teambition.client_secret}'
+      Teambition.callback_url  = '#{Teambition.callback_url}'
 
-TEAMBITION_TOKEN = '#{token}'.freeze
+      TEAMBITION_TOKEN = '#{token}'.freeze
     END_OF_DOC
     file.close
   end

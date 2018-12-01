@@ -31,7 +31,7 @@ module Teambition
       params = {
         client_id: client_key,
         redirect_uri: callback_url,
-        lang: %w(zh en).include?(lang.to_s) ? lang : :zh
+        lang: %w[zh en].include?(lang.to_s) ? lang : :zh
       }
       params[:state] = state if state
       uri.query = URI.encode_www_form(params)
