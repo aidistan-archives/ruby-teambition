@@ -5,7 +5,7 @@ describe Teambition::HasTeambitionAccout do
 
   it 'wraps API' do
     obj = Class.new(@base) do
-      has_teambition_account namespace: :tb, token: :token
+      has_teambition_account token: :token, namespace: :tb
     end.new
     obj.define_singleton_method(:token) { 'my-token' }
     expect(obj.tb.token).to eql(obj.token)
@@ -22,10 +22,10 @@ describe Teambition::HasTeambitionAccout do
   end
 
   context 'with nil namespace' do
-    it 'includes API directly with a token delegation' do
+    it 'mix-in API with a token delegation' do
       obj = Class.new(@base) do
         attr_accessor :my_token
-        has_teambition_account namespace: nil, token: :my_token
+        has_teambition_account token: :my_token, namespace: nil
       end.new
 
       obj.my_token = 'my-token'
@@ -34,10 +34,10 @@ describe Teambition::HasTeambitionAccout do
 
     context 'when delegate :token to :token' do
       it 'still works' do
-        # This situation equals to `include Teambition::API`
+        # This situation equals to `include Teambition::API` directly
 
         obj = Class.new(@base) do
-          has_teambition_account namespace: nil, token: :token
+          has_teambition_account token: :token, namespace: nil
         end.new
 
         obj.token = 'my-token'

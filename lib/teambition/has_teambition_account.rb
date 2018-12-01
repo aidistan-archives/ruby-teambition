@@ -5,7 +5,7 @@ module Teambition
   module HasTeambitionAccout
     extend ActiveSupport::Concern
 
-    # @!method has_teambition_account(token: :token, namespace: :tb)
+    # @!method has_teambition_account(token: :teambition_token, namespace: :tb)
     #   Macro for mixing-in Teambition API
     #   @param token [Symbol] the attribute storing the token in current namespace
     #   @param namespace [Symbol] a name of the namespace which to include Teambition APIs (+nil+ to include directly in current namespace)
@@ -14,36 +14,20 @@ module Teambition
     end
 
     class_methods do
-      # rubocop:disable Style/PredicateName, Metrics/MethodLength
-
-      def has_teambition_account(token: :token, namespace: :tb)
+      # rubocop:disable Style/PredicateName
+      def has_teambition_account(token: :teambition_token, namespace: :tb)
         raise ArgumentError unless token
 
-        unless namespace
+        if namespace
+          define_method(namespace) do
+            @__teambition_namespace__ ||= Teambition::Wrapper.new(self, token)
+          end
+        else
           include Teambition::API
           define_method(:token) { send(token) } unless token == :token
-          return
-        end
-
-        kclass = Class.new do
-          include Teambition::API
-
-          def initialize(obj, msg)
-            @obj = obj
-            @msg = msg
-          end
-
-          def token
-            @obj.send(@msg)
-          end
-        end
-
-        define_method(namespace) do
-          @__teambition_namespace__ ||= kclass.new(self, token)
         end
       end
-
-      # rubocop:enable Style/PredicateName, Metrics/MethodLength
+      # rubocop:enable Style/PredicateName
     end
   end
 end

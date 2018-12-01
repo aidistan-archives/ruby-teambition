@@ -2,10 +2,6 @@ require 'json'
 require 'net/http'
 require 'uri'
 
-require 'teambition/api'
-require 'teambition/has_teambition_account'
-require 'teambition/version'
-
 # Top-level namespace
 module Teambition
   # Authorization domain
@@ -67,3 +63,8 @@ module Teambition
     end
   end
 end
+
+require 'teambition/api'
+require 'teambition/wrapper'
+require 'teambition/has_teambition_account'
+require 'teambition/version'
