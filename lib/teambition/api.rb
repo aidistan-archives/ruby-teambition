@@ -1,7 +1,7 @@
 module Teambition
   # Mix-in module to introduce Teambition APIs
   module API
-    # Teambition user's token
+    # @return [String] teambition token of given user
     attr_accessor :token
 
     # Validate the token

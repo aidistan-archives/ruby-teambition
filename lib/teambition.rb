@@ -10,14 +10,11 @@ module Teambition
   API_DOMAIN = 'https://api.teambition.com'.freeze
 
   class << self
-    # Client key provided by Teambition
-    # @return [String]
+    # @return [String] client key provided by Teambition
     attr_accessor :client_key
-    # Client secret provided by Teambition
-    # @return [String]
+    # @return [String] client secret provided by Teambition
     attr_accessor :client_secret
-    # Customizable callback url
-    # @return [String]
+    # @return [String] callback url
     attr_accessor :callback_url
 
     # Get the url for authorization

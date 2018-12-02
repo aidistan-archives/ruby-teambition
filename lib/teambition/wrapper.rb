@@ -3,6 +3,7 @@ module Teambition
   class Wrapper
     include Teambition::API
 
+    # Create a delegator
     # @param obj [Object] object to delegate
     # @param msg [Symbol] method of +obj+ returning the teambition token
     def initialize(obj, msg)
