@@ -11,10 +11,13 @@ module Teambition
 
   class << self
     # Client key provided by Teambition
+    # @return [String]
     attr_accessor :client_key
     # Client secret provided by Teambition
+    # @return [String]
     attr_accessor :client_secret
     # Customizable callback url
+    # @return [String]
     attr_accessor :callback_url
 
     # Get the url for authorization
