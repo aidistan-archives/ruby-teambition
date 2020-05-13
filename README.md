@@ -1,3 +1,5 @@
+> ## 新版 Teambition API 正在接入中
+
 # Ruby Gem : Teambition
 [![Gem Version](https://badge.fury.io/rb/teambition.svg)](http://badge.fury.io/rb/teambition)
 [![Build Status](https://travis-ci.org/aidistan/ruby-teambition.svg?branch=master)](https://travis-ci.org/aidistan/ruby-teambition)
@@ -29,4 +31,4 @@ gem 'teambition'
 
 ## 许可协议
 
-Copyright (c) 2015-2018 Aidi Stan under [the MIT License](https://github.com/aidistan/ruby-teambition/blob/master/LICENSE)
+Copyright (c) 2015-2020 Aidi Stan under [the MIT License](https://github.com/aidistan/ruby-teambition/blob/master/LICENSE)

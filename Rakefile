@@ -68,3 +68,8 @@ namespace :spec do
     file.close
   end
 end
+
+# lint
+task :lint do
+  system('bundle exec inch')
+end
