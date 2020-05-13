@@ -18,7 +18,7 @@ namespace :spec do
     require 'teambition'
 
     say "Let's get a redirect url first:"
-    say '1. open "https://requestbin.fullcontact.com"'
+    say '1. open "http://requestbin.net"'
     say '2. click "Create a RequestBin"'
     say '3. copy the url shown in the page'
     Teambition.callback_url = ask '3. paste it here:'
@@ -26,7 +26,7 @@ namespace :spec do
     say '---'
 
     say "Let's get a client key and a client secret now:"
-    say '1. open "https://developer.teambition.com/dashboard"'
+    say '1. open "https://open.teambition.com/app"'
     say '2. create a new app and fill "Callback URL" with the redirect url we got'
     Teambition.client_key = ask '3. paste your client key here:'
     Teambition.client_secret = ask '4. paste your client secret here:'

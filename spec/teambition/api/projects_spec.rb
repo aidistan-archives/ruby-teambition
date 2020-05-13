@@ -16,7 +16,7 @@ describe Teambition::API do
     end
   end
 
-  it 'creates & deletes projects' do
+  xit 'creates & deletes projects' do
     res = post '/api/projects',
       name: 'ruby-teambition',
       description: 'Temp project created by ruby-teambition'
