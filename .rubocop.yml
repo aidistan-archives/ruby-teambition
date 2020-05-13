@@ -1,15 +1,13 @@
 AllCops:
-  TargetRubyVersion: 2.5.1
+  TargetRubyVersion: 2.5.5
 
-Metrics/LineLength:
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation
+Layout/LineLength:
   Enabled: false
+
 Metrics/BlockLength:
   Enabled: false
 
-Style/AlignParameters:
-  EnforcedStyle: with_fixed_indentation
 Style/FrozenStringLiteralComment:
   Enabled: false
-Style/NestedParenthesizedCalls:
-  Exclude:
-    - 'spec/**/*_spec.rb'
